@@ -1,7 +1,25 @@
 {{extend 'layout.html'}}
-<h1>This is the devices/index.html template</h1>
-{{=BEAUTIFY(response._vars)}}
-
 <H1>
     Devices
 </H1>
+
+
+
+{{ for device in devices: }}
+    <div>
+        <span>
+            {{path = URL('edit', args=['device.id'])}}
+            <H2>{{=device.DeviceName}} <a href="{{=path}}" >Configure</a></H2>
+            <hr>
+            <p>
+            <b>IP Address & Port:</b>
+            {{=device.Ip}}:{{=device.Port}}
+            </p>
+        </span>
+    </div>
+
+{{pass}}
+
+<p/><p/><p/><p/><p/>
+Debug:
+{{=BEAUTIFY(response._vars)}}
