@@ -3,12 +3,15 @@
 @auth.requires_login()
 def index(): 
     devices = db(db.device).select()
-    message= "List Method"    
+    otherdata = SQLFORM.factory(Field("Status" ))
+    
     return locals()
 
 #@auth.requires_membership('Device Configuration')
-def edit():       
+def edit():
     device = db.device(db.device.id == request.args[0])
+    form = SQLFORM(db.device, device)
+        
     return locals()
 
 def add():

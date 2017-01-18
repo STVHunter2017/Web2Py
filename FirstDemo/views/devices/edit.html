@@ -1,7 +1,11 @@
 {{extend 'layout.html'}}
-<h1>This is the devices/edit.html template</h1>
-{{=BEAUTIFY(response._vars)}}
+<h1>Edit Device - {{=device.DeviceName}}</h1>
 
-<H1>
-    {{=device}}
-</H1>
+    {{=form}}
+
+<h3>
+    debug
+</h3>
+
+{{=BEAUTIFY(response._args)}}
+{{=BEAUTIFY(response._vars)}}

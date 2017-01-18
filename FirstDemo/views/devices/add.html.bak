@@ -1,0 +1,8 @@
+{{extend 'layout.html'}}
+<h1>This is the devices/add.html template</h1>
+
+{{=form}}
+
+<!-- {{=BEAUTIFY(response._args)}}
+{{=BEAUTIFY(response._vars)}}
+-->
