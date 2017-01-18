@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+<h1>This is the devices/edit.html template</h1>
+{{=BEAUTIFY(response._vars)}}
+
+<H1>
+    {{=form}}
+</H1>

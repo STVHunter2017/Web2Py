@@ -7,8 +7,10 @@ def index():
     return locals()
 
 #@auth.requires_membership('Device Configuration')
-def edit():
+def edit():       
+    device = db.device(db.device.id == request.args[0])
+    return locals()
+
+def add():
     form = SQLFORM(db.device).process()
-    form2=SQLFORM.factory(Field('deviceName')).process()
-    deviceId = request.args[0]
     return locals()

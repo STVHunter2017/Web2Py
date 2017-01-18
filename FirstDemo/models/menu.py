@@ -142,11 +142,7 @@ def _():
                 (T('Bears'), False, None, []),
             ]),
         (T('Devices'), False, None, [
-            (T('Device1'), False, URL("", "devices", "index"), []),
-                (T('Device2'), False, URL("", "devices", "index"), []),
-                (T('Device3'), False, URL("", "devices", "index"), []),
-                (T('Device4'), False, URL("", "devices", "index"), []),
-                (T('Device5'), False, URL("", "devices", "index"), []),                
+            (T('List'), False, URL("", "devices", "index"), []),            
             ]),
     ]
 

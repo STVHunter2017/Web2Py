@@ -1,9 +1,9 @@
 {{extend 'layout.html'}}
 <H1>
+    {{path = URL('add')}}
     Devices
+    <a href="{{=path}}" >Add</a>
 </H1>
-
-
 
 {{ for device in devices: }}
     <div>
