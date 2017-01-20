@@ -11,9 +11,34 @@ def index():
 def edit():
     device = db.device(db.device.id == request.args[0])
     form = SQLFORM(db.device, device)
+    
+    if form.process().accepted:
+        session.flash = "Saved"
+        redirect (URL('index'))
+    elif form.errors:
+        response.flash = "Errors"
+    else:
+        response.flash = "Please complete the form"
         
     return locals()
 
 def add():
     form = SQLFORM(db.device).process()
     return locals()
+
+def exportDevice():
+    return dict(devices = db(db.device).select())
+
+@request.restful()
+def api():
+   response.view = 'generic.json'
+   @auth.requires_login()
+   def GET():
+        return dict(devices = db(db.device).select())
+   return locals()
+
+auth.settings.allow_basic_login = True
+@auth.requires_login()
+@request.restful()
+def private_call():
+    return exportDevice()

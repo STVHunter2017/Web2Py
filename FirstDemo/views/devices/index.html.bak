@@ -16,11 +16,12 @@
             <hr>
             {{path = URL('edit', args=[device.id])}}
             <b>{{=device.DeviceName}} 
-                <a href="{{=path}}" >Configure</a></b>
-            <hr>
+                <a href="{{=path}}" >Configure</a></b>            
             <p>
             <b>IP Address & Port:</b>
-            {{=device.Ip}}:{{=device.Port}}            
+            {{=device.Ip}}:{{=device.Port}}                            
+                <b>Type</b>
+                {{=device.Status}}
             <hr>    
         </li>            
     </div>  
